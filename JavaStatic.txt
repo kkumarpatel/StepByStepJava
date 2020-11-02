@@ -1,4 +1,6 @@
 Java Static
 notes
 
+Devolped by dev2
+bellow ppoint is comes repo2
 Static is a keyword in java and static is applicaatble on mathod or member lavel
