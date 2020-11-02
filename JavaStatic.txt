@@ -1,1 +1,4 @@
+Java Static
+notes
+
 Static is a keyword in java and static is applicaatble on mathod or member lavel
