@@ -1,4 +1,8 @@
 Java Static
 notes
 
+bellow line comes under branch
+modify in main file
+
+
 Static is a keyword in java and static is applicaatble on mathod or member lavel
