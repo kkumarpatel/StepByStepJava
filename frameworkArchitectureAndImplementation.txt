@@ -1,0 +1,121 @@
+java/main
+com.abc.page---
+  LoginPage.java
+    locators(using page Factory)
+    mathods
+  PledgePage.java
+  HomePage.java
+com.abc.testBase
+  baseTest.java
+    launch browser(chrome/ff/ie etc)
+    wait mathods 
+    load property file
+    maximize browser
+com.abc.testData
+    excellsheets for TD
+com.abc.utils
+    utility classes
+    
+com.abc.database
+   connection with db
+   
+com.abc.APITest
+   CRUD api test related classed
+   
+
+    
+
+test/main
+com.abc.test
+  LoginPageTest.java
+  HomePageTest.java
+  PledgePageTest.java
+  
+POM.xml
+Result
+Screenshot
+readMe
+
+-----------------------------------------------------
+
+@BeforeClass()
+public void launch(){
+System.getProperty("webdriver.chrome.driver","D://seleniumTest");
+WebDriver driver=new ChromeDriver();
+driver.get("https://www.google.com");
+}
+@Test(Priority=0)
+public void searchOnGooglePl(){
+driver.findElement(By.ID("searchG")).sendKeys("Selenium WebDriver");
+}
+
+@Test(Priority=0)
+String actualText=driver.getTest();
+Assert.assertEquals(actualText,ExpectedText);
+
+@AfterClass()
+public void closeBrowser(){
+driver.close
+}
+
+
+class GooglePage extends TestBase{
+
+@FindBy(id="searchG")
+WebElement search;
+
+@FindBy(id="ElementVal")
+WebElement ele;
+
+public void searchOnGooglePl(){
+
+search.sendKeys("selenium webdriver");
+}
+
+
+public boolean validationOfTextPresent(String expectedText){
+String actualText=ele.getText();
+boolean res=Assert.assertEquals(actualText, expectedText);
+return res;
+}
+
+class TestBase{
+
+WebDriver driver;
+@BeforeClass()
+public void launch(){
+System.getProperty("webdriver.chrome.driver","D://seleniumTest");
+driver=new ChromeDriver();
+driver.get("https://www.google.com");
+driver.windows.maximize();
+}
+
+
+@AfterClass()
+public void closeBrowser(){
+driver.close
+}
+
+
+}
+
+class GooglePageTest extends TestBase{
+
+WebDriver driver;
+void GooglePageTest(){
+GooglePage gPage=new GooglePage();
+}
+
+@Test(Priority=0)
+public void searchG(){
+gPage.searchOnGooglePl();
+}
+
+@Test(Priority=1)
+public void validationofG(){
+boolean titlePresent=gPage.validationOfTextPresent("Selenium");
+}
+
+
+
+
